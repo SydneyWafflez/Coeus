@@ -1,93 +1,106 @@
 body {
-  background: #eee;
-  font-family: "times new roman", serif;
-  line-height: 30px;
+    font-family: 'Open Sans', sans-serif;
+    background: #efefef;
+    text-transform: uppercase;
 }
-
-h2 {
-  color: #aaa;
-  font-size: 30px;
-  line-height: 40px;
-  font-style: italic;
-  font-weight: 200;
-  margin: 40px;
-  text-align: center;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+h1 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    margin-right: 12.5%;
+    text-align: right;
+    font-size: 1.5em;
+    color: #bbb;
+    letter-spacing: 0.1em;
 }
-
-.box {
-  background: #fff;
-  border-radius: 2px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-  margin: 30px 5%;
-  padding: 5%;
+td, a {
+    transition: color 333ms ease-in-out;
 }
-
-@media (min-width: 544px) {
-  .box {
-    margin: 40px auto;
-    max-width: 440px;
-    padding: 40px;
-  }
+a {
+    color: #407db8;
+    text-decoration: none;
+    font-weight: 400;
 }
-
-
-/* The list style
--------------------------------------------------------------- */
-
-.directory-list ul {
-  margin-left: 10px;
-  padding-left: 20px;
-  border-left: 1px dashed #ddd;
+.table {
+    width: 75%;
+    margin: 0 12.5% 50px 12.5%;
 }
-
-.directory-list li {
-  list-style: none;
-  color: #888;
-  font-size: 17px;
-  font-style: italic;
-  font-weight: normal;
+tr {
+    height: 40px;
+    transition: background 333ms ease-in-out;
 }
-
-.directory-list a {
-  border-bottom: 1px solid transparent;
-  color: #888;
-  text-decoration: none;
-  transition: all 0.2s ease;
+tr:nth-child(even) {
+    background: #e6f0f6;
 }
-
-.directory-list a:hover {
-  border-color: #eee;
-  color: #000;
+tr:nth-child(odd) {
+    background: #fff;
 }
-
-.directory-list .folder,
-.directory-list .folder > a {
-  color: #777;
-  font-weight: bold;
+tr:hover {
+    background: #ddd;
 }
-
-
-/* The icons
--------------------------------------------------------------- */
-
-.directory-list li:before {
-  margin-right: 10px;
-  content: "";
-  height: 20px;
-  vertical-align: middle;
-  width: 20px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  /* file icon by default */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='lightgrey' d='M85.714,42.857V87.5c0,1.487-0.521,2.752-1.562,3.794c-1.042,1.041-2.308,1.562-3.795,1.562H19.643 c-1.488,0-2.753-0.521-3.794-1.562c-1.042-1.042-1.562-2.307-1.562-3.794v-75c0-1.487,0.521-2.752,1.562-3.794 c1.041-1.041,2.306-1.562,3.794-1.562H50V37.5c0,1.488,0.521,2.753,1.562,3.795s2.307,1.562,3.795,1.562H85.714z M85.546,35.714 H57.143V7.311c3.05,0.558,5.505,1.767,7.366,3.627l17.41,17.411C83.78,30.209,84.989,32.665,85.546,35.714z' /></svg>");
-  background-position: center 2px;
-  background-size: 60% auto;
+tr:hover:nth-child(even) {
+    background: #ddd;
 }
-
-.directory-list li.folder:before {
-  /* folder icon if folder class is specified */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='lightblue' d='M96.429,37.5v39.286c0,3.423-1.228,6.361-3.684,8.817c-2.455,2.455-5.395,3.683-8.816,3.683H16.071 c-3.423,0-6.362-1.228-8.817-3.683c-2.456-2.456-3.683-5.395-3.683-8.817V23.214c0-3.422,1.228-6.362,3.683-8.817 c2.455-2.456,5.394-3.683,8.817-3.683h17.857c3.422,0,6.362,1.228,8.817,3.683c2.455,2.455,3.683,5.395,3.683,8.817V25h37.5 c3.422,0,6.361,1.228,8.816,3.683C95.201,31.138,96.429,34.078,96.429,37.5z' /></svg>");
-  background-position: center top;
-  background-size: 75% auto;
+tr:hover td {
+    color: #888;
+}
+tr:hover a {
+    color: #666;
+}
+tr td {
+    color: #888;
+    font-size: 0.78em;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+}
+tr td:first-child {
+    padding-left: 25px;
+}
+tr td:last-child {
+    padding-right: 25px;
+    text-align: right;
+}
+/* Icons */
+.folder:before, .file:before {
+    margin-right: 7px;
+    font-size: 0.7em;
+}
+.folder:before {
+    content: '▶';
+    opacity: 0.6;
+}
+.file:before {
+    content: '▶';
+    opacity: 0.2;
+}
+/* Top Bar */
+tr:first-child {
+    background: #666;
+}
+tr:first-child td {
+    color: #eee;
+    font-size: 0.75em;
+    letter-spacing: 0.3em;
+}
+tr:first-child, tr:first-child td {
+    transition: none;
+}
+/* Download Bar */
+.download {
+    width: 100%;
+    background: #437eb6;
+    text-align: center;
+    padding: 8px 0;
+}
+.download a {
+    color: white;
+    font-weight: 700;
+}
+.download a:after {
+    content: "▶";
+    margin-left: 7px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+.download a:hover {
+    color: #163f65;
 }
